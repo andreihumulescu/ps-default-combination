@@ -1,4 +1,4 @@
-# PrestaShop Front Office Default Currency
+# PrestaShop Default Combination
 
 ## Description
 
