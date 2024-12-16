@@ -5,6 +5,13 @@
 PrestaShop module that swaps the default combination when the current default one has no more stock items. \
 Tested with PrestaShop 8 and PHP 8.1
 
+## Usage
+
+You can either manually set the default combination by going to the config page of the module or
+by running the `./bin/console/defaultcombination:set` from the CLI - you should be able to run this command in a cronjob as well
+
+Currently, the module does not update the default combination when an order is placed. This might be fixed at a later time.
+
 ## Install
 
 This installs as a standard PrestaShop module. You can get the latest version from [Releases][1] \

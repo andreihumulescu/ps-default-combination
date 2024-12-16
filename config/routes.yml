@@ -1,0 +1,7 @@
+set_default_combination:
+  path: defaultcombination/set
+  methods: [POST]
+  defaults:
+    _controller: 'DefaultCombination\Controller\Admin\SetDefaultCombinationController::setAction'
+    _legacy_controller: SetDefaultCombination
+    _legacy_link: SetDefaultCombination

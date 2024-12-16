@@ -1,0 +1,54 @@
+{#**
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT Free License
+ * that is bundled with this package in the file LICENSE.md.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/license/mit
+ *
+ * @author    Andrei H
+ * @copyright Since 2024 Andrei H
+ * @license   MIT
+ *#}
+<div class="panel">
+    <div class="panel-heading">
+        <i class="icon-star"></i>
+        {{ 'Default Combination Actions'|trans({}, 'Modules.Defaultcombination.Admin') }}
+    </div>
+    <div class="row default-combination-row">
+        <div class="col-md-4">
+            {{ 'Set Default Combination'|trans({}, 'Modules.Defaultcombination.Admin') }}
+        </div>
+        <div class="col-md-8">
+            <button class="btn btn-primary" id="set-button">
+                {{ 'Set'|trans({}, 'Modules.Defaultcombination.Admin') }}
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-heading">
+        <i class="icon-list"></i>
+        {{ 'Product List'|trans({}, 'Modules.Defaultcombination.Admin') }}
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ 'Product ID'|trans({}, 'Modules.Defaultcombination.Admin') }}</th>
+                    <th>{{ 'Product Name'|trans({}, 'Modules.Defaultcombination.Admin') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in productList %}
+                    <tr>
+                        <td class="id-product">{{ product['id_product'] }}</td>
+                        <td>{{ product['name'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
