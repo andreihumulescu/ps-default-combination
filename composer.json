@@ -1,0 +1,18 @@
+{
+  "name": "andreih/defaultcombination",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "DefaultCombination\\": "src/"
+    }
+  },
+  "config": {
+    "prepend-autoloader": false
+  },
+  "authors": [
+    {
+      "name": "Andrei Humulescu"
+    }
+  ],
+  "require": {}
+}

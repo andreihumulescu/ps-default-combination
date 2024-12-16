@@ -1,0 +1,27 @@
+services:
+  _defaults:
+    public: true
+
+  defaultcombination.empty_default_combination_repository:
+    class: DefaultCombination\Repository\EmptyDefaultCombinationRepository
+    arguments:
+      - '@doctrine.dbal.default_connection'
+      - '%database_prefix%'
+
+  defaultcombination.set_default_combination_service:
+    class: DefaultCombination\Service\SetDefaultCombinationService
+    arguments:
+      - "@PrestaShop\\PrestaShop\\Adapter\\Product\\Combination\\Repository\\CombinationRepository"
+      - '@prestashop.core.query_bus'
+      - '@defaultcombination.empty_default_combination_repository'
+
+  defaultcombination.set_default_combination_command:
+    class: DefaultCombination\Command\SetCommand
+    arguments:
+      - '@defaultcombination.set_default_combination_service'
+    tags:
+      - { name: console.command }
+
+  DefaultCombination\Controller\Admin\SetDefaultCombinationController:
+    arguments:
+      - '@defaultcombination.set_default_combination_service'
